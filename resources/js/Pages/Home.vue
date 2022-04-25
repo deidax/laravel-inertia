@@ -1,14 +1,13 @@
 <template>
-<div>
-  <Nav/>
-  <h1>Welcome to Laravel - Inertia</h1>
-</div>
+  <Layout>
+    <h1 class="text-4xl font-bold">Welcome to Laravel - Inertia</h1>
+  </Layout>
 </template>
 
 <script>
-import Nav from '../Shared/Nav'
+import Layout from '../Shared/Layout'
 export default {
-  components: { Nav }
+  components: { Layout }
 }
 </script>
 

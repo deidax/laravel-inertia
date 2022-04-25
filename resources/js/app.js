@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import { createInertiaApp } from '@inertiajs/inertia-vue'
+import { InertiaProgress } from '@inertiajs/progress'
 
 createInertiaApp({
   resolve: name => require(`./Pages/${name}`),
@@ -10,4 +11,6 @@ createInertiaApp({
       render: h => h(App, props),
     }).$mount(el)
   },
-})
+});
+
+InertiaProgress.init()
