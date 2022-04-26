@@ -1,3 +1,12 @@
 <template>
-    <h1 class="text-4xl font-bold">Settings</h1>
+<div>
+  <Head title="Setting Page" />
+    <h1 class="text-4xl font-bold">Setting</h1>
+</div>
 </template>
+
+<script>
+
+export default {
+}
+</script>

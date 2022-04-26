@@ -153,6 +153,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 (0,_inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_1__.createInertiaApp)({
+  title: function title(_title) {
+    return "".concat(_title, " - My App");
+  },
   resolve: function () {
     var _resolve = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(name) {
       var _page$layout;
@@ -189,7 +192,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         App = _ref.App,
         props = _ref.props,
         plugin = _ref.plugin;
-    vue__WEBPACK_IMPORTED_MODULE_4__["default"].use(plugin);
+    vue__WEBPACK_IMPORTED_MODULE_4__["default"].use(plugin).component("Head", _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_1__.Head);
     new vue__WEBPACK_IMPORTED_MODULE_4__["default"]({
       render: function render(h) {
         return h(App, props);
@@ -515,7 +518,7 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("nav", [
-    _c("ul", { staticClass: "flex list-disc space-x-4 list-inside" }, [
+    _c("ul", { staticClass: "flex space-x-6" }, [
       _c(
         "li",
         [
@@ -590,7 +593,7 @@ var render = function () {
   return _c(
     "Link",
     {
-      staticClass: "text-blue-500 hover:underline",
+      staticClass: "text-black-500 hover:underline",
       class: { "font-bold underline": _vm.active },
       attrs: { href: _vm.href },
     },
