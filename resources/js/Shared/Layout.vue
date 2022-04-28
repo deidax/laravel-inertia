@@ -11,7 +11,7 @@
     </section>
 
     <section class="p-6">
-      <div class="max-w-3xl mx-auto">
+      <div class="max-w-6xl mx-auto">
         <iframe
           class="my-5"
           width="100%"

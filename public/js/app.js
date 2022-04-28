@@ -474,7 +474,7 @@ var render = function () {
     _c("section", { staticClass: "p-6" }, [
       _c(
         "div",
-        { staticClass: "max-w-3xl mx-auto" },
+        { staticClass: "max-w-6xl mx-auto" },
         [
           _c("iframe", {
             staticClass: "my-5",

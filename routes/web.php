@@ -20,7 +20,8 @@ Route::get('/', function () {
 });
 Route::get('/users', function () {
     return Inertia::render('Users', [
-        'users' => User::all()->pluck(['name'])
+        //'users' => User::all('id','name', 'created_at')
+        'users' => User::paginate(10, ['id', 'name', 'created_at'])
     ]);
 });
 Route::get('/settings', function () {
