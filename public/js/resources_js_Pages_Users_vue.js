@@ -233,6 +233,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -241,7 +243,23 @@ __webpack_require__.r(__webpack_exports__);
     Pagination: _Shared_Pagination_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   props: {
-    users: Object
+    users: Object,
+    filters: Object
+  },
+  data: function data() {
+    return {
+      search: this.filters.search
+    };
+  },
+  watch: {
+    search: function search(value) {
+      this.$inertia.get('/users', {
+        search: value
+      }, {
+        preserveState: true,
+        replace: true
+      });
+    }
   }
 });
 
@@ -497,9 +515,26 @@ var render = function () {
               ),
               _vm._v(" "),
               _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.search,
+                    expression: "search",
+                  },
+                ],
                 staticClass:
                   "\n              appearance-none\n              rounded-r rounded-l\n              sm:rounded-l-none\n              border border-gray-400 border-b\n              block\n              pl-8\n              pr-6\n              py-2\n              w-full\n              bg-white\n              text-sm\n              placeholder-gray-400\n              text-gray-700\n              focus:bg-white\n              focus:placeholder-gray-600\n              focus:text-gray-700\n              focus:outline-none\n            ",
                 attrs: { placeholder: "Search" },
+                domProps: { value: _vm.search },
+                on: {
+                  input: function ($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.search = $event.target.value
+                  },
+                },
               }),
             ]),
           ]),

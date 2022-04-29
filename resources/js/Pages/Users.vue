@@ -22,8 +22,10 @@
                 ></path>
               </svg>
             </span>
+            <!-- Search input -->
             <input
               placeholder="Search"
+              v-model="search"
               class="
                 appearance-none
                 rounded-r rounded-l
@@ -143,7 +145,7 @@
                                         </div> -->
                       <div class="ml-3">
                         <p class="text-gray-900 whitespace-no-wrap">
-                          {{ user.name }}
+                          {{user.name}}
                         </p>
                       </div>
                     </div>
@@ -225,6 +227,21 @@ export default {
   components: { Link, Pagination },
   props: {
     users: Object,
+    filters: Object,
+  },
+  data() {
+      return {
+          search: this.filters.search
+      }
+  },
+
+  watch: {
+      search(value){
+          this.$inertia.get('/users', { search: value }, {
+              preserveState: true,
+              replace: true
+          });
+      }
   },
 };
 </script>
